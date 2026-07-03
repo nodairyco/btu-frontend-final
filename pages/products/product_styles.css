@@ -241,6 +241,37 @@ main {
   background-color: #FBAF85;
 }
 
+.product-gallery {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 160px;
+}
+
+.gallery-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+}
+
+.gallery-left img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery-right {
+  flex: 1.5;
+}
+
+.gallery-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 @media (max-width: 768px) {
   .product-overview {
     flex-direction: column;
@@ -265,5 +296,13 @@ main {
   .product-details {
     flex-direction: column;
     gap: 64px;
+  }
+
+  .product-gallery {
+    flex-direction: column;
+  }
+
+  .gallery-left img {
+    height: 200px;
   }
 }
