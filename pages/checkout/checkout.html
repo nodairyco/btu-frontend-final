@@ -95,18 +95,27 @@
 
                     <div class="form-grid">
                         <label>
-                            <span>Name</span>
-                            <input type="text" placeholder="Alexei Ward">
+                            <div class="label-row">
+                                <span>Name</span>
+                                <span class="error-msg" id="name-error"></span>
+                            </div>
+                            <input type="text" id="name" placeholder="Alexei Ward" required>
                         </label>
 
                         <label>
-                            <span>Email Address</span>
-                            <input type="email" placeholder="alexei@mail.com">
+                            <div class="label-row">
+                                <span>Email Address</span>
+                                <span class="error-msg" id="email-error"></span>
+                            </div>
+                            <input type="email" id="email" placeholder="alexei@mail.com" required>
                         </label>
 
                         <label>
-                            <span>Phone Number</span>
-                            <input type="tel" placeholder="+1 202-555-0136">
+                            <div class="label-row">
+                                <span>Phone Number</span>
+                                <span class="error-msg" id="phone-error"></span>
+                            </div>
+                            <input type="tel" id="phone" placeholder="+1 202-555-0136" required>
                         </label>
                     </div>
                 </div>
@@ -120,24 +129,36 @@
                     </div>
 
                     <label>
-                        <span>Address</span>
-                        <input type="text" placeholder="1137 Williams Avenue">
+                        <div class="label-row">
+                            <span>Address</span>
+                            <span class="error-msg" id="address-error"></span>
+                        </div>
+                        <input type="text" id="address" placeholder="1137 Williams Avenue" required>
                     </label>
 
                     <div class="form-grid grid-3">
                         <label>
-                            <span>ZIP Code</span>
-                            <input type="text" placeholder="10001">
+                            <div class="label-row">
+                                <span>ZIP Code</span>
+                                <span class="error-msg" id="zip-error"></span>
+                            </div>
+                            <input type="text" id="zip" placeholder="10001" required>
                         </label>
 
                         <label>
-                            <span>City</span>
-                            <input type="text" placeholder="New York">
+                            <div class="label-row">
+                                <span>City</span>
+                                <span class="error-msg" id="city-error"></span>
+                            </div>
+                            <input type="text" id="city" placeholder="New York" required>
                         </label>
 
                         <label class="full-width">
-                            <span>Country</span>
-                            <input type="text" placeholder="United States">
+                            <div class="label-row">
+                                <span>Country</span>
+                                <span class="error-msg" id="country-error"></span>
+                            </div>
+                            <input type="text" id="country" placeholder="United States" required>
                         </label>
                     </div>
                 </div>
@@ -166,12 +187,18 @@
 
                     <div class="form-grid" id="emoney-fields">
                         <label>
-                            <span>e-Money Number</span>
-                            <input type="text" placeholder="238521993">
+                            <div class="label-row">
+                                <span>e-Money Number</span>
+                                <span class="error-msg" id="emoney-number-error"></span>
+                            </div>
+                            <input type="text" id="emoney-number" placeholder="238521993">
                         </label>
                         <label>
-                            <span>e-Money PIN</span>
-                            <input type="text" placeholder="6891">
+                            <div class="label-row">
+                                <span>e-Money PIN</span>
+                                <span class="error-msg" id="emoney-pin-error"></span>
+                            </div>
+                            <input type="text" id="emoney-pin" placeholder="6891">
                         </label>
                     </div>
 

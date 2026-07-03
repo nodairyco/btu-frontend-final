@@ -89,13 +89,18 @@ label {
   display: block;
 }
 
-label span {
+label > span {
   display: block;
   margin-bottom: 10px;
   font-size: 12px;
-  letter-spacing: 1px;
-  color: var(--dark-gray);
+  letter-spacing: -0.21px;
+  font-weight: 700;
+  color: var(--black);
   text-transform: uppercase;
+}
+
+label .label-row {
+  margin-bottom: 0;
 }
 
 input[type="text"],
@@ -487,4 +492,42 @@ input::placeholder {
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.label-row span:first-child {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.21px;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.label-row.has-error span:first-child {
+  color: #CD2C2C;
+}
+
+.error-msg {
+  font-size: 12px;
+  font-weight: 500;
+  color: #CD2C2C;
+  display: none;
+}
+
+.error-msg.visible {
+  display: block;
+}
+
+input.error {
+  border-color: #CD2C2C;
+}
+
+input.error:focus {
+  outline-color: #CD2C2C;
 }

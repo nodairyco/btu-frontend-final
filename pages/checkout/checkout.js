@@ -86,12 +86,129 @@ function setupCheckoutButton() {
                 return;
             }
             
+            if (!validateForm()) {
+                return;
+            }
+            
             populateConfirmation(cart);
             confirmationModal.classList.add('open');
             confirmationOverlay.classList.add('open');
             document.body.style.overflow = 'hidden';
         });
     }
+}
+
+function validateForm() {
+    let isValid = true;
+    
+    clearErrors();
+    
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const address = document.getElementById('address');
+    const zip = document.getElementById('zip');
+    const city = document.getElementById('city');
+    const country = document.getElementById('country');
+    const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+    
+    if (!name.value.trim()) {
+        showError('name', "Can't be empty");
+        isValid = false;
+    }
+    
+    if (!email.value.trim()) {
+        showError('email', "Can't be empty");
+        isValid = false;
+    } else if (!isValidEmail(email.value)) {
+        showError('email', 'Wrong format');
+        isValid = false;
+    }
+    
+    if (!phone.value.trim()) {
+        showError('phone', "Can't be empty");
+        isValid = false;
+    }
+    
+    if (!address.value.trim()) {
+        showError('address', "Can't be empty");
+        isValid = false;
+    }
+    
+    if (!zip.value.trim()) {
+        showError('zip', "Can't be empty");
+        isValid = false;
+    }
+    
+    if (!city.value.trim()) {
+        showError('city', "Can't be empty");
+        isValid = false;
+    }
+    
+    if (!country.value.trim()) {
+        showError('country', "Can't be empty");
+        isValid = false;
+    }
+    
+    if (paymentMethod === 'emoney') {
+        const emoneyNumber = document.getElementById('emoney-number');
+        const emoneyPin = document.getElementById('emoney-pin');
+        
+        if (!emoneyNumber.value.trim()) {
+            showError('emoney-number', "Can't be empty");
+            isValid = false;
+        } else if (!/^\d{9}$/.test(emoneyNumber.value.trim())) {
+            showError('emoney-number', 'Must be 9 digits');
+            isValid = false;
+        }
+        
+        if (!emoneyPin.value.trim()) {
+            showError('emoney-pin', "Can't be empty");
+            isValid = false;
+        } else if (!/^\d{4}$/.test(emoneyPin.value.trim())) {
+            showError('emoney-pin', 'Must be 4 digits');
+            isValid = false;
+        }
+    }
+    
+    return isValid;
+}
+
+function showError(fieldId, message) {
+    const input = document.getElementById(fieldId);
+    const errorSpan = document.getElementById(fieldId + '-error');
+    const labelRow = errorSpan ? errorSpan.closest('.label-row') : null;
+    
+    if (input) {
+        input.classList.add('error');
+    }
+    
+    if (errorSpan) {
+        errorSpan.textContent = message;
+        errorSpan.classList.add('visible');
+    }
+    
+    if (labelRow) {
+        labelRow.classList.add('has-error');
+    }
+}
+
+function clearErrors() {
+    const inputs = document.querySelectorAll('input.error');
+    const errorMsgs = document.querySelectorAll('.error-msg.visible');
+    const labelRows = document.querySelectorAll('.label-row.has-error');
+    
+    inputs.forEach(input => input.classList.remove('error'));
+    errorMsgs.forEach(msg => {
+        msg.classList.remove('visible');
+        msg.textContent = '';
+    });
+    labelRows.forEach(row => row.classList.remove('has-error'));
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
 
 function populateConfirmation(cart) {
