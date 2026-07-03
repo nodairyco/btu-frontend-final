@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Category</title>
     <link rel="stylesheet" href="../../styles.css">
-    <link rel="stylesheet" href="checkout_styles.css">
+    <link rel="stylesheet" href="category_styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -27,174 +27,72 @@
             </div>
             <div class="header-category-list">
                 <a href="../../index.html" class="header-category">Home</a>
-                <a href="../category/category.html?cat=headphones" class="header-category">Headphones</a>
-                <a href="../category/category.html?cat=speakers" class="header-category">Speakers</a>
-                <a href="../category/category.html?cat=earphones" class="header-category">Earphones</a>
+                <a href="category.html?cat=headphones" class="header-category">Headphones</a>
+                <a href="category.html?cat=speakers" class="header-category">Speakers</a>
+                <a href="category.html?cat=earphones" class="header-category">Earphones</a>
             </div>
-            <button class="header-button header-cart-button">
+            <a href="../checkout/checkout.html" class="header-button header-cart-button">
                 <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M7.51883 13.1946H7.51776C7.14161 13.1955 6.83595 13.491 6.83595 13.8542C6.83595 14.2179 7.14268 14.5139 7.51954 14.5139H19.9154C20.293 14.5139 20.599 14.8092 20.599 15.1736C20.599 15.538 20.293 15.8333 19.9154 15.8333H18.75H8.75H7.51954C6.38876 15.8333 5.46876 14.9455 5.46876 13.8542C5.46876 13.0421 5.97843 12.343 6.70493 12.0382L4.23686 1.31944H0.683595C0.306016 1.31944 0 1.02412 0 0.659722C0 0.295329 0.306016 0 0.683595 0H4.78516C5.1056 0 5.38295 0.214753 5.45256 0.516611L5.94122 2.63889H22.6498C22.8643 2.63889 23.0663 2.73613 23.1956 2.9014C23.3246 3.06668 23.3659 3.28074 23.307 3.47986L20.5726 12.716C20.4888 12.9991 20.2205 13.1944 19.9154 13.1944H7.5215L7.51883 13.1946ZM8.75 15.8333C9.89873 15.8333 10.8333 16.7679 10.8333 17.9167C10.8333 19.0654 9.89873 20 8.75 20C7.60127 20 6.66667 19.0654 6.66667 17.9167C6.66667 16.7679 7.60127 15.8333 8.75 15.8333ZM18.75 15.8333C19.8987 15.8333 20.8333 16.7679 20.8333 17.9167C20.8333 19.0654 19.8987 20 18.75 20C17.6013 20 16.6667 19.0654 16.6667 17.9167C16.6667 16.7679 17.6013 15.8333 18.75 15.8333ZM19.3997 11.875L21.7435 3.95833H6.24492L8.06784 11.875H19.3997ZM9.44444 17.9167C9.44444 17.5338 9.13285 17.2222 8.75 17.2222C8.36715 17.2222 8.05556 17.5338 8.05556 17.9167C8.05556 18.2995 8.36715 18.6111 8.75 18.6111C9.13285 18.6111 9.44444 18.2995 9.44444 17.9167ZM18.75 17.2222C19.1328 17.2222 19.4444 17.5338 19.4444 17.9167C19.4444 18.2995 19.1328 18.6111 18.75 18.6111C18.3672 18.6111 18.0556 18.2995 18.0556 17.9167C18.0556 17.5338 18.3672 17.2222 18.75 17.2222Z"
                         fill="white" />
                 </svg>
-            </button>
+            </a>
         </div>
     </header>
 
-    <main class="checkout-main">
-        <a href="../products/product.html" class="go-back">Go Back</a>
+    <main>
+        <section class="category-hero">
+            <h1 id="category-title">HEADPHONES</h1>
+        </section>
 
-        <section class="checkout-layout">
-            <form class="checkout-form">
-                <div class="checkout-header">
-                    <h1>CHECKOUT</h1>
+        <section class="product-list" id="product-list">
+        </section>
+
+        <section class="quick-links">
+            <div class="quick-link-item">
+                <div class="quick-link-item-content">
+                    <img src="../../assets/akgs.png" alt="Quick Link 1">
+                    <h1 class="quick-link-item-title">HEADPHONES</h1>
+                    <a href="category.html?cat=headphones" class="quick-link-item-link">SHOP ></a>
                 </div>
+            </div>
 
-                <div class="checkout-section">
-                    <div class="section-title">
-                        <div>
-                            <h2>BILLING DETAILS</h2>
-                            <p>Enter your payment details below.</p>
-                        </div>
-                    </div>
-
-                    <div class="form-grid">
-                        <label>
-                            <span>Name</span>
-                            <input type="text" placeholder="Alexei Ward">
-                        </label>
-
-                        <label>
-                            <span>Email Address</span>
-                            <input type="email" placeholder="alexei@mail.com">
-                        </label>
-
-                        <label>
-                            <span>Phone Number</span>
-                            <input type="tel" placeholder="+1 202-555-0136">
-                        </label>
-                    </div>
+            <div class="quick-link-item">
+                <div class="quick-link-item-content">
+                    <img src="../../assets/zx9_quick.png" alt="Quick Link 2">
+                    <h1 class="quick-link-item-title">SPEAKERS</h1>
+                    <a href="category.html?cat=speakers" class="quick-link-item-link">SHOP ></a>
                 </div>
+            </div>
 
-                <div class="checkout-section">
-                    <div class="section-title">
-                        <div>
-                            <h2>SHIPPING INFO</h2>
-                            <p>Enter your shipping information.</p>
-                        </div>
-                    </div>
-
-                    <label>
-                        <span>Address</span>
-                        <input type="text" placeholder="1137 Williams Avenue">
-                    </label>
-
-                    <div class="form-grid grid-3">
-                        <label>
-                            <span>ZIP Code</span>
-                            <input type="text" placeholder="10001">
-                        </label>
-
-                        <label>
-                            <span>City</span>
-                            <input type="text" placeholder="New York">
-                        </label>
-
-                        <label class="full-width">
-                            <span>Country</span>
-                            <input type="text" placeholder="United States">
-                        </label>
-                    </div>
+            <div class="quick-link-item">
+                <div class="quick-link-item-content">
+                    <img src="../../assets/yx1_quick.png" alt="Quick Link 3">
+                    <h1 class="quick-link-item-title">EARPHONES</h1>
+                    <a href="category.html?cat=earphones" class="quick-link-item-link">SHOP ></a>
                 </div>
+            </div>
+        </section>
 
-                <div class="checkout-section">
-                    <div class="section-title">
-                        <div>
-                            <h2>PAYMENT DETAILS</h2>
-                            <p>Choose your payment method.</p>
-                        </div>
-                    </div>
-
-                    <p class="payment-label">Payment Method</p>
-                    <div class="payment-methods">
-                        <label class="payment-card selected">
-                            <input type="radio" name="payment" checked>
-                            <span class="payment-radio"></span>
-                            <span>e-Money</span>
-                        </label>
-                        <label class="payment-card">
-                            <input type="radio" name="payment">
-                            <span class="payment-radio"></span>
-                            <span>Cash on Delivery</span>
-                        </label>
-                    </div>
-
-                    <div class="form-grid">
-                        <label>
-                            <span>e-Money Number</span>
-                            <input type="text" placeholder="238521993">
-                        </label>
-                        <label>
-                            <span>e-Money PIN</span>
-                            <input type="text" placeholder="6891">
-                        </label>
-                    </div>
-                </div>
-            </form>
-
-            <aside class="checkout-summary">
-                <div class="summary-header">
-                    <h2>SUMMARY</h2>
-                </div>
-
-                <div class="summary-card">
-                    <div class="summary-item">
-                        <img src="../../assets/akgs.png" alt="XX99 MK II Headphones">
-                        <div class="item-details">
-                            <p class="item-name">XX99 MK II</p>
-                            <p class="item-price">$2,999</p>
-                        </div>
-                        <p class="item-quantity">x1</p>
-                    </div>
-                    <div class="summary-item muted">
-                        <img src="../../assets/akgs.png" alt="XX59 Headphones">
-                        <div class="item-details">
-                            <p class="item-name">XX59</p>
-                            <p class="item-price">$899</p>
-                        </div>
-                        <p class="item-quantity">x2</p>
-                    </div>
-                    <div class="summary-item muted">
-                        <img src="../../assets/akgs.png" alt="YX1 Earphones">
-                        <div class="item-details">
-                            <p class="item-name">YX1</p>
-                            <p class="item-price">$599</p>
-                        </div>
-                        <p class="item-quantity">x1</p>
-                    </div>
-                </div>
-
-                <div class="summary-totals">
-                    <div>
-                        <span>TOTAL</span>
-                        <span>$5,396</span>
-                    </div>
-                    <div>
-                        <span>SHIPPING</span>
-                        <span>$50</span>
-                    </div>
-                    <div>
-                        <span>VAT (INCLUDED)</span>
-                        <span>$1,079</span>
-                    </div>
-                    <div class="summary-grand-total">
-                        <span>GRAND TOTAL</span>
-                        <span>$5,446</span>
-                    </div>
-                </div>
-
-                <button type="button" class="continue-btn">CONTINUE & PAY</button>
-            </aside>
+        <section class="promo">
+            <div class="promo-content">
+                <h2 class="promo-title">
+                    BRINGING YOU THE <span class="promo-title-highlight">BEST</span> AUDIO GEAR
+                </h2>
+                <p class="promo-description">
+                    Located at the heart of New York City, Audiophile is the premier
+                    store for high end headphones, earphones, speakers, and audio
+                    accessories. We have a large showroom and luxury demonstration
+                    rooms available for you to browse and experience a wide range
+                    of our products. Stop by our store to meet some of the fantastic
+                    people who make Audiophile the best place to buy your portable
+                    audio equipment.
+                </p>
+            </div>
+            <div class="promo-image">
+                <img src="../../assets/IMAMAZING.png" alt="Man wearing headphones">
+            </div>
         </section>
     </main>
 
@@ -207,9 +105,9 @@
 
                 <nav class="footer-nav">
                     <a href="../../index.html">HOME</a>
-                    <a href="../category/category.html?cat=headphones">HEADPHONES</a>
-                    <a href="../category/category.html?cat=speakers">SPEAKERS</a>
-                    <a href="../category/category.html?cat=earphones">EARPHONES</a>
+                    <a href="category.html?cat=headphones">HEADPHONES</a>
+                    <a href="category.html?cat=speakers">SPEAKERS</a>
+                    <a href="category.html?cat=earphones">EARPHONES</a>
                 </nav>
             </div>
 
@@ -249,6 +147,8 @@
                 </div>
             </div>
     </footer>
+
+    <script src="category.js"></script>
 </body>
 
 </html>
