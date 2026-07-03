@@ -1,14 +1,5 @@
 const API_URL = 'https://raw.githubusercontent.com/lomsadze123/audiophile-ecommerce-website/refs/heads/master/public/data.json';
 
-const LOCAL_IMAGES = {
-    'yx1-earphones': '../../assets/yx1_main.png',
-    'xx59-headphones': '../../assets/akgs.png',
-    'xx99-mark-one-headphones': '../../assets/akgs.png',
-    'xx99-mark-two-headphones': '../../assets/prod_overview.png',
-    'zx7-speaker': '../../assets/zx7.png',
-    'zx9-speaker': '../../assets/zx9_quick.png'
-};
-
 const category = new URLSearchParams(window.location.search).get('cat');
 
 const categoryTitle = document.getElementById('category-title');
@@ -38,7 +29,7 @@ fetch(API_URL)
 function createProductCard(product, isReverse) {
     const newLabel = product.new ? '<p class="product-label">NEW PRODUCT</p>' : '';
     const reverseClass = isReverse ? ' reverse' : '';
-    const imageUrl = LOCAL_IMAGES[product.slug] || '../../assets/akgs.png';
+    const imageUrl = getImagePath(product.slug);
 
     return `
         <article class="product-card${reverseClass}">

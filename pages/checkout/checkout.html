@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body data-base-path="../../">
     <header class="header">
         <div class="header-container">
             <div class="logo-container">
@@ -32,6 +32,7 @@
                 <a href="../category/category.html?cat=earphones" class="header-category">Earphones</a>
             </div>
             <button class="header-button header-cart-button">
+                <span class="cart-count" id="cart-count">0</span>
                 <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M7.51883 13.1946H7.51776C7.14161 13.1955 6.83595 13.491 6.83595 13.8542C6.83595 14.2179 7.14268 14.5139 7.51954 14.5139H19.9154C20.293 14.5139 20.599 14.8092 20.599 15.1736C20.599 15.538 20.293 15.8333 19.9154 15.8333H18.75H8.75H7.51954C6.38876 15.8333 5.46876 14.9455 5.46876 13.8542C5.46876 13.0421 5.97843 12.343 6.70493 12.0382L4.23686 1.31944H0.683595C0.306016 1.31944 0 1.02412 0 0.659722C0 0.295329 0.306016 0 0.683595 0H4.78516C5.1056 0 5.38295 0.214753 5.45256 0.516611L5.94122 2.63889H22.6498C22.8643 2.63889 23.0663 2.73613 23.1956 2.9014C23.3246 3.06668 23.3659 3.28074 23.307 3.47986L20.5726 12.716C20.4888 12.9991 20.2205 13.1944 19.9154 13.1944H7.5215L7.51883 13.1946ZM8.75 15.8333C9.89873 15.8333 10.8333 16.7679 10.8333 17.9167C10.8333 19.0654 9.89873 20 8.75 20C7.60127 20 6.66667 19.0654 6.66667 17.9167C6.66667 16.7679 7.60127 15.8333 8.75 15.8333ZM18.75 15.8333C19.8987 15.8333 20.8333 16.7679 20.8333 17.9167C20.8333 19.0654 19.8987 20 18.75 20C17.6013 20 16.6667 19.0654 16.6667 17.9167C16.6667 16.7679 17.6013 15.8333 18.75 15.8333ZM19.3997 11.875L21.7435 3.95833H6.24492L8.06784 11.875H19.3997ZM9.44444 17.9167C9.44444 17.5338 9.13285 17.2222 8.75 17.2222C8.36715 17.2222 8.05556 17.5338 8.05556 17.9167C8.05556 18.2995 8.36715 18.6111 8.75 18.6111C9.13285 18.6111 9.44444 18.2995 9.44444 17.9167ZM18.75 17.2222C19.1328 17.2222 19.4444 17.5338 19.4444 17.9167C19.4444 18.2995 19.1328 18.6111 18.75 18.6111C18.3672 18.6111 18.0556 18.2995 18.0556 17.9167C18.0556 17.5338 18.3672 17.2222 18.75 17.2222Z"
@@ -40,6 +41,40 @@
             </button>
         </div>
     </header>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3>CART (<span id="cart-count-modal">0</span>)</h3>
+            <button onclick="clearCart()">Remove all</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total">
+            <span>TOTAL</span>
+            <span id="cart-total">$ 0</span>
+        </div>
+        <a href="checkout.html" class="cart-checkout-btn">CHECKOUT</a>
+    </div>
+
+    <div class="confirmation-overlay" id="confirmation-overlay"></div>
+    <div class="confirmation-modal" id="confirmation-modal">
+        <div class="confirmation-icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="32" fill="#D87D4A"/>
+                <path d="M20 32L28 40L44 24" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h2 class="confirmation-title">THANK YOU<br>FOR YOUR ORDER</h2>
+        <p class="confirmation-subtitle">You will receive an email confirmation shortly.</p>
+        <div class="confirmation-summary">
+            <div class="confirmation-items" id="confirmation-items"></div>
+            <div class="confirmation-total">
+                <span>GRAND TOTAL</span>
+                <span id="confirmation-grand-total">$ 0</span>
+            </div>
+        </div>
+        <a href="../../index.html" class="confirmation-btn" onclick="clearCart()">BACK TO HOME</a>
+    </div>
 
     <main class="checkout-main">
         <a href="../products/product.html" class="go-back">Go Back</a>
@@ -118,18 +153,18 @@
                     <p class="payment-label">Payment Method</p>
                     <div class="payment-methods">
                         <label class="payment-card selected">
-                            <input type="radio" name="payment" checked>
+                            <input type="radio" name="payment" value="emoney" checked>
                             <span class="payment-radio"></span>
                             <span>e-Money</span>
                         </label>
                         <label class="payment-card">
-                            <input type="radio" name="payment">
+                            <input type="radio" name="payment" value="cod">
                             <span class="payment-radio"></span>
                             <span>Cash on Delivery</span>
                         </label>
                     </div>
 
-                    <div class="form-grid">
+                    <div class="form-grid" id="emoney-fields">
                         <label>
                             <span>e-Money Number</span>
                             <input type="text" placeholder="238521993">
@@ -138,6 +173,13 @@
                             <span>e-Money PIN</span>
                             <input type="text" placeholder="6891">
                         </label>
+                    </div>
+
+                    <div class="cod-message" id="cod-message" style="display: none;">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M42.2812 8.4375H46.5938C47.3704 8.4375 48 9.06713 48 9.84375V14.0625C48 14.8391 47.3704 15.4688 46.5938 15.4688H45.0469V29.5312C45.0469 30.3079 44.4172 30.9375 43.6406 30.9375H33.0469V43.6406C33.0469 44.4172 32.4172 45.0469 31.6406 45.0469H4.35938C3.58275 45.0469 2.95312 44.4172 2.95312 43.6406V33.0469H1.40625C0.629625 33.0469 0 32.4172 0 31.6406V27.4219C0 26.6453 0.629625 26.0156 1.40625 26.0156H2.95312V9.84375C2.95312 9.06713 3.58275 8.4375 4.35938 8.4375H8.67188C8.67188 4.21088 12.0703 0.8125 16.2969 0.8125H34.7812C39.0079 0.8125 42.4062 4.21088 42.2812 8.4375ZM39.3281 8.4375C39.3281 5.83425 37.2278 3.76562 34.7812 3.76562H16.2969C13.8503 3.76562 11.625 5.83425 11.625 8.4375H39.3281ZM5.90625 11.3906V42.0938H30.0938V30.9375H4.35938C3.58275 30.9375 2.95312 30.3079 2.95312 29.5312V15.4688H1.40625V12.5156H4.35938V11.3906H5.90625ZM33.0469 11.3906V27.9844H42.0938V11.3906H33.0469ZM30.0938 11.3906H8.85938V27.9844H30.0938V11.3906ZM45.0469 12.5156V11.3906H44.3438V12.5156H45.0469Z" fill="#D87D4A"/>
+                        </svg>
+                        <p>The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
                     </div>
                 </div>
             </form>
@@ -249,6 +291,8 @@
                 </div>
             </div>
     </footer>
+    <script src="../../cart.js"></script>
+    <script src="checkout.js"></script>
 </body>
 
 </html>
