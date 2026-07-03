@@ -133,8 +133,32 @@ function toggleCart() {
     }
 }
 
+function setActiveNav() {
+    const currentUrl = window.location.href;
+    const navLinks = document.querySelectorAll('.header-category');
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        const href = link.getAttribute('href');
+        
+        if (currentUrl.includes('index.html') || currentUrl.endsWith('/')) {
+            if (href.includes('index.html') || href === '/') {
+                link.classList.add('active');
+            }
+        } else if (currentUrl.includes('cat=headphones') && href.includes('cat=headphones')) {
+            link.classList.add('active');
+        } else if (currentUrl.includes('cat=speakers') && href.includes('cat=speakers')) {
+            link.classList.add('active');
+        } else if (currentUrl.includes('cat=earphones') && href.includes('cat=earphones')) {
+            link.classList.add('active');
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     updateCartUI();
+    setActiveNav();
     
     const cartButton = document.querySelector('.header-cart-button');
     if (cartButton) {

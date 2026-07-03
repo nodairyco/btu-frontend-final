@@ -66,7 +66,8 @@ body {
     transition: color 0.1s ease-in-out;
 }
 
-.header-category:hover {
+.header-category:hover,
+.header-category.active {
     color: var(--main-accent);
 }
 
@@ -731,7 +732,7 @@ main {
     background: none;
     border: none;
     color: var(--dark-gray);
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     font-size: 15px;
 }
