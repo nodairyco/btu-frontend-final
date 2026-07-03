@@ -7,6 +7,13 @@
     --main-lr-padding: 12%;
     --seconadry-accent: rgba(255, 255, 255, 0.2);
     --main-accent: rgba(216, 125, 74, 1);
+    --white: #ffffff;
+    --black: #191919;
+    --dark-gray: #4C4C4C;
+    --light-gray: #F1F1F1;
+    --white-75: rgba(255, 255, 255, 0.75);
+    --white-60: rgba(255, 255, 255, 0.6);
+    --white-40: rgba(255, 255, 255, 0.4);
 }
 
 body {
@@ -113,7 +120,7 @@ main {
 }
 
 .highlighted-item-title {
-    color: #ffffff;
+    color: var(--white);
     font-size: 56px;
     line-height: 1.1;
     text-transform: uppercase;
@@ -121,7 +128,7 @@ main {
 }
 
 .highlighted-item-description {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--white-75);
     font-size: 15px;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -129,7 +136,7 @@ main {
 
 .highlighted-item-btn {
     background-color: var(--main-accent);
-    color: #ffffff;
+    color: var(--white);
     border: none;
     padding: 15px 32px;
     font-weight: 700;
@@ -172,7 +179,7 @@ main {
 }
 
 .quick-link-item {
-    background-color: rgba(241, 241, 241, 1);
+    background-color: var(--light-gray);
     padding: 0 20px;
     position: relative;
     width: 160px;
@@ -231,7 +238,7 @@ main {
 }
 
 .featured-product {
-    background-color: #D87D4A;
+    background-color: var(--main-accent);
     border-radius: 8px;
     padding: 60px;
     display: flex;
@@ -252,7 +259,7 @@ main {
 }
 
 .featured-product-title {
-    color: #ffffff;
+    color: var(--white);
     text-transform: uppercase;
     margin-bottom: 24px;
     font-family: Manrope;
@@ -263,7 +270,7 @@ main {
 }
 
 .featured-product-description {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--white-75);
     font-size: 15px;
     margin-bottom: 32px;
     font-family: Manrope;
@@ -273,8 +280,8 @@ main {
 }
 
 .featured-product-btn {
-    background-color: #191919;
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
     border: none;
     padding: 15px 32px;
     font-size: 13px;
@@ -288,8 +295,8 @@ main {
 }
 
 .featured-product-btn:hover {
-    background-color: #ffffff;
-    color: #191919;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .secondary-product {
@@ -330,7 +337,7 @@ main {
 
 .secondary-product-btn {
     background: transparent;
-    border: 1px solid #191919;
+    border: 1px solid var(--black);
     padding: 15px 32px;
     font-size: 13px;
     letter-spacing: 1px;
@@ -343,8 +350,8 @@ main {
 }
 
 .secondary-product-btn:hover {
-    background-color: #191919;
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .tertiary-product {
@@ -367,7 +374,7 @@ main {
 }
 
 .tertiary-product-content {
-    background-color: #F1F1F1;
+    background-color: var(--light-gray);
     display: flex;
     align-items: center;
     padding-left: 40px;
@@ -387,8 +394,8 @@ main {
 }
 
 .tertiary-product-btn {
-    background-color: #191919;
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
     border: none;
     padding: 15px 32px;
     font-size: 13px;
@@ -402,7 +409,7 @@ main {
 }
 
 .tertiary-product-btn:hover {
-    background-color: #4C4C4C;
+    background-color: var(--dark-gray);
 }
 
 .promo {
@@ -423,16 +430,16 @@ main {
     font-size: 40px;
     line-height: 1.1;
     text-transform: uppercase;
-    color: #191919;
+    color: var(--black);
     margin-bottom: 32px;
 }
 
 .promo-title-highlight {
-    color: #D87D4A;
+    color: var(--main-accent);
 }
 
 .promo-description {
-    color: #4C4C4C;
+    color: var(--dark-gray);
     font-size: 15px;
     line-height: 1.6;
 }
@@ -451,14 +458,14 @@ main {
 }
 
 .site-footer {
-    background-color: #191919;
-    color: #ffffff;
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .footer-top-bar {
     height: 4px;
     width: 101px;
-    background-color: #D87D4A;
+    background-color: var(--main-accent);
     margin: 0 auto;
 }
 
@@ -478,7 +485,7 @@ main {
 .footer-logo {
     font-size: 24px;
     text-transform: lowercase;
-    color: #ffffff;
+    color: var(--white);
 }
 
 .footer-nav {
@@ -487,7 +494,7 @@ main {
 }
 
 .footer-nav a {
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
     font-size: 13px;
     font-weight: 700;
@@ -498,12 +505,12 @@ main {
 
 .footer-nav a:hover,
 .footer-nav a.active {
-    color: #D87D4A;
+    color: var(--main-accent);
 }
 
 .footer-description {
     max-width: 540px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--white-60);
     font-size: 15px;
     line-height: 1.6;
     margin-bottom: 56px;
@@ -516,7 +523,7 @@ main {
 }
 
 .footer-copyright {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--white-40);
     font-size: 15px;
     font-weight: 700;
 }
