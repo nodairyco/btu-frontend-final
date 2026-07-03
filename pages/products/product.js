@@ -1,11 +1,8 @@
-const API_URL = 'https://raw.githubusercontent.com/lomsadze123/audiophile-ecommerce-website/refs/heads/master/public/data.json';
-
 const slug = new URLSearchParams(window.location.search).get('slug');
 let currentProduct = null;
 let quantity = 1;
 
-fetch(API_URL)
-    .then(response => response.json())
+fetchProducts()
     .then(products => {
         const product = products.find(p => p.slug === slug);
         if (product) {

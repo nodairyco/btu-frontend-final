@@ -124,6 +124,7 @@ function updateCartUI() {
 function toggleCart() {
     const cartModal = document.getElementById('cart-modal');
     const cartOverlay = document.getElementById('cart-overlay');
+    const cartToggle = document.getElementById('cart-toggle');
     
     if (cartModal && cartOverlay) {
         closeMobileMenu();
@@ -131,35 +132,40 @@ function toggleCart() {
         cartModal.classList.toggle('open');
         cartOverlay.classList.toggle('open');
         document.body.style.overflow = isOpen ? '' : 'hidden';
+        if (cartToggle) cartToggle.setAttribute('aria-expanded', String(!isOpen));
     }
 }
 
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     
     if (mobileMenu && mobileOverlay) {
         const isOpen = mobileMenu.classList.contains('open');
         mobileMenu.classList.toggle('open');
         mobileOverlay.classList.toggle('open');
         document.body.style.overflow = isOpen ? '' : 'hidden';
+        if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', String(!isOpen));
     }
 }
 
 function closeMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     
     if (mobileMenu && mobileOverlay) {
         mobileMenu.classList.remove('open');
         mobileOverlay.classList.remove('open');
         document.body.style.overflow = '';
+        if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'false');
     }
 }
 
 function setActiveNav() {
     const currentUrl = window.location.href;
-    const navLinks = document.querySelectorAll('.header-category');
+    const navLinks = document.querySelectorAll('.header-category, .footer-nav a');
     
     navLinks.forEach(link => {
         link.classList.remove('active');

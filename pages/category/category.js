@@ -1,5 +1,3 @@
-const API_URL = 'https://raw.githubusercontent.com/lomsadze123/audiophile-ecommerce-website/refs/heads/master/public/data.json';
-
 const category = new URLSearchParams(window.location.search).get('cat');
 
 const categoryTitle = document.getElementById('category-title');
@@ -10,8 +8,7 @@ if (category) {
     document.title = category.charAt(0).toUpperCase() + category.slice(1) + ' | Audiophile';
 }
 
-fetch(API_URL)
-    .then(response => response.json())
+fetchProducts()
     .then(products => {
         const filtered = products.filter(p => p.category === category);
 

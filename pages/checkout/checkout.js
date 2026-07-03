@@ -27,7 +27,7 @@ function setupPaymentToggle() {
 }
 
 function populateSummary() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = getCart();
     const summaryCard = document.querySelector('.summary-card');
     const summaryTotals = document.querySelector('.summary-totals');
     
@@ -36,7 +36,7 @@ function populateSummary() {
         return;
     }
 
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const total = getCartTotal();
     const shipping = 50;
     const vat = Math.round(total * 0.2);
     const grandTotal = total + shipping;
@@ -79,7 +79,7 @@ function setupCheckoutButton() {
     
     if (continueBtn) {
         continueBtn.addEventListener('click', function() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cart = getCart();
             
             if (cart.length === 0) {
                 alert('Your cart is empty!');
@@ -215,7 +215,7 @@ function populateConfirmation(cart) {
     const confirmationItems = document.getElementById('confirmation-items');
     const confirmationGrandTotal = document.getElementById('confirmation-grand-total');
     
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const total = getCartTotal();
     const shipping = 50;
     const grandTotal = total + shipping;
     

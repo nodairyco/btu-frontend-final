@@ -1,0 +1,148 @@
+function headerHTML(basePath) {
+    return `
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <button class="header-button category-list-button" id="mobile-menu-toggle" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <img src="${basePath}assets/hamburger.svg" alt="" width="16" height="15">
+                </button>
+                <a href="${basePath}index.html"><img src="${basePath}assets/logo.svg" alt="Audiophile logo" class="logo"></a>
+            </div>
+            <div class="header-category-list">
+                <a href="${basePath}index.html" class="header-category">Home</a>
+                <a href="${basePath}pages/category/category.html?cat=headphones" class="header-category">Headphones</a>
+                <a href="${basePath}pages/category/category.html?cat=speakers" class="header-category">Speakers</a>
+                <a href="${basePath}pages/category/category.html?cat=earphones" class="header-category">Earphones</a>
+            </div>
+            <button class="header-button header-cart-button" id="cart-toggle" aria-label="Open cart" aria-controls="cart-modal" aria-expanded="false">
+                <span class="cart-count" id="cart-count">0</span>
+                <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.51883 13.1946H7.51776C7.14161 13.1955 6.83595 13.491 6.83595 13.8542C6.83595 14.2179 7.14268 14.5139 7.51954 14.5139H19.9154C20.293 14.5139 20.599 14.8092 20.599 15.1736C20.599 15.538 20.293 15.8333 19.9154 15.8333H18.75H8.75H7.51954C6.38876 15.8333 5.46876 14.9455 5.46876 13.8542C5.46876 13.0421 5.97843 12.343 6.70493 12.0382L4.23686 1.31944H0.683595C0.306016 1.31944 0 1.02412 0 0.659722C0 0.295329 0.306016 0 0.683595 0H4.78516C5.1056 0 5.38295 0.214753 5.45256 0.516611L5.94122 2.63889H22.6498C22.8643 2.63889 23.0663 2.73613 23.1956 2.9014C23.3246 3.06668 23.3659 3.28074 23.307 3.47986L20.5726 12.716C20.4888 12.9991 20.2205 13.1944 19.9154 13.1944H7.5215L7.51883 13.1946ZM8.75 15.8333C9.89873 15.8333 10.8333 16.7679 10.8333 17.9167C10.8333 19.0654 9.89873 20 8.75 20C7.60127 20 6.66667 19.0654 6.66667 17.9167C6.66667 16.7679 7.60127 15.8333 8.75 15.8333ZM18.75 15.8333C19.8987 15.8333 20.8333 16.7679 20.8333 17.9167C20.8333 19.0654 19.8987 20 18.75 20C17.6013 20 16.6667 19.0654 16.6667 17.9167C16.6667 16.7679 17.6013 15.8333 18.75 15.8333ZM19.3997 11.875L21.7435 3.95833H6.24492L8.06784 11.875H19.3997ZM9.44444 17.9167C9.44444 17.5338 9.13285 17.2222 8.75 17.2222C8.36715 17.2222 8.05556 17.5338 8.05556 17.9167C8.05556 18.2995 8.36715 18.6111 8.75 18.6111C9.13285 18.6111 9.44444 18.2995 9.44444 17.9167ZM18.75 17.2222C19.1328 17.2222 19.4444 17.5338 19.4444 17.9167C19.4444 18.2995 19.1328 18.6111 18.75 18.6111C18.3672 18.6111 18.0556 18.2995 18.0556 17.9167C18.0556 17.5338 18.3672 17.2222 18.75 17.2222Z"
+                        fill="white" />
+                </svg>
+            </button>
+        </div>
+    </header>`;
+}
+
+function mobileMenuHTML(basePath) {
+    return `
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+            <div class="quick-link-item">
+                <div class="quick-link-item-content">
+                    <img src="${basePath}assets/akgs.png" alt="Headphones">
+                    <h1 class="quick-link-item-title">HEADPHONES</h1>
+                    <a href="${basePath}pages/category/category.html?cat=headphones" class="quick-link-item-link">SHOP</a>
+                </div>
+            </div>
+            <div class="quick-link-item">
+                <div class="quick-link-item-content">
+                    <img src="${basePath}assets/zx9_quick.png" alt="Speakers">
+                    <h1 class="quick-link-item-title">SPEAKERS</h1>
+                    <a href="${basePath}pages/category/category.html?cat=speakers" class="quick-link-item-link">SHOP</a>
+                </div>
+            </div>
+            <div class="quick-link-item">
+                <div class="quick-link-item-content">
+                    <img src="${basePath}assets/yx1_quick.png" alt="Earphones">
+                    <h1 class="quick-link-item-title">EARPHONES</h1>
+                    <a href="${basePath}pages/category/category.html?cat=earphones" class="quick-link-item-link">SHOP</a>
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+
+function cartModalHTML(basePath) {
+    return `
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header">
+            <h3>CART (<span id="cart-count-modal">0</span>)</h3>
+            <button onclick="clearCart()">Remove all</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total">
+            <span>TOTAL</span>
+            <span id="cart-total">$ 0</span>
+        </div>
+        <a href="${basePath}pages/checkout/checkout.html" class="cart-checkout-btn">CHECKOUT</a>
+    </div>`;
+}
+
+function footerHTML(basePath) {
+    return `
+    <footer class="site-footer">
+        <div class="footer-top-bar"></div>
+
+        <div class="footer-container">
+            <div class="footer-top">
+                <h2 class="footer-logo">audiophile</h2>
+
+                <nav class="footer-nav">
+                    <a href="${basePath}index.html">HOME</a>
+                    <a href="${basePath}pages/category/category.html?cat=headphones">HEADPHONES</a>
+                    <a href="${basePath}pages/category/category.html?cat=speakers">SPEAKERS</a>
+                    <a href="${basePath}pages/category/category.html?cat=earphones">EARPHONES</a>
+                </nav>
+            </div>
+
+            <p class="footer-description">
+                Audiophile is an all in one stop to fulfill your audio needs.
+                We're a small team of music lovers and sound specialists who
+                are devoted to helping you get the most out of personal audio.
+                Come and visit our demo facility - we're open 7 days a week.
+            </p>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">Copyright <span id="copyright-year">2024</span>. All Rights Reserved</p>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325V22.676C0 23.407 0.593 24 1.325 24H12.82V14.706H9.692V11.084H12.82V8.413C12.82 5.313 14.713 3.625 17.479 3.625C18.804 3.625 19.942 3.724 20.274 3.768V7.008L18.356 7.009C16.852 7.009 16.561 7.724 16.561 8.772V11.085H20.148L19.681 14.707H16.561V24H22.677C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter"><svg width="24" height="20" viewBox="0 0 24 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 2.309C23.117 2.701 22.168 2.965 21.172 3.084C22.189 2.475 22.97 1.51 23.337 0.36C22.386 0.924 21.332 1.334 20.21 1.555C19.313 0.598 18.032 0 16.616 0C13.437 0 11.101 2.966 11.819 6.045C7.728 5.84 4.1 3.88 1.671 0.901C0.381 3.114 1.002 6.009 3.194 7.475C2.388 7.449 1.628 7.228 0.965 6.859C0.911 9.14 2.546 11.274 4.914 11.749C4.221 11.937 3.462 11.981 2.69 11.833C3.316 13.789 5.134 15.212 7.29 15.252C5.22 16.875 2.612 17.6 0 17.292C2.179 18.689 4.768 19.504 7.548 19.504C16.69 19.504 21.855 11.783 21.543 4.858C22.505 4.163 23.34 3.296 24 2.309Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 0C8.741 0 8.333 0.014 7.053 0.072C2.695 0.272 0.273 2.69 0.073 7.052C0.014 8.333 0 8.741 0 12C0 15.259 0.014 15.668 0.072 16.948C0.272 21.306 2.69 23.728 7.052 23.928C8.333 23.986 8.741 24 12 24C15.259 24 15.668 23.986 16.948 23.928C21.302 23.728 23.73 21.31 23.927 16.948C23.986 15.668 24 15.259 24 12C24 8.741 23.986 8.333 23.928 7.053C23.732 2.699 21.311 0.273 16.949 0.073C15.668 0.014 15.259 0 12 0ZM12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C20.102 2.381 21.621 3.924 21.769 7.152C21.827 8.417 21.838 8.797 21.838 12.001C21.838 15.206 21.826 15.585 21.769 16.85C21.62 20.075 20.105 21.621 16.85 21.769C15.584 21.827 15.206 21.839 12 21.839C8.796 21.839 8.416 21.827 7.151 21.769C3.891 21.62 2.38 20.07 2.232 16.849C2.174 15.584 2.162 15.205 2.162 12C2.162 8.796 2.175 8.417 2.232 7.151C2.381 3.924 3.896 2.38 7.151 2.232C8.417 2.175 8.796 2.163 12 2.163ZM5.838 12C5.838 8.597 8.597 5.838 12 5.838C15.403 5.838 18.162 8.597 18.162 12C18.162 15.404 15.403 18.163 12 18.163C8.597 18.163 5.838 15.403 5.838 12ZM12 16C9.791 16 8 14.21 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12C16 14.21 14.209 16 12 16ZM16.965 5.595C16.965 4.8 17.61 4.155 18.406 4.155C19.201 4.155 19.845 4.8 19.845 5.595C19.845 6.39 19.201 7.035 18.406 7.035C17.61 7.035 16.965 6.39 16.965 5.595Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>`;
+}
+
+function renderPartials() {
+    const basePath = document.body.dataset.basePath || '';
+
+    const headerMount = document.getElementById('site-header');
+    const mobileMenuMount = document.getElementById('site-mobile-menu');
+    const cartModalMount = document.getElementById('site-cart-modal');
+    const footerMount = document.getElementById('site-footer');
+
+    if (headerMount) headerMount.innerHTML = headerHTML(basePath);
+    if (mobileMenuMount) mobileMenuMount.innerHTML = mobileMenuHTML(basePath);
+    if (cartModalMount) cartModalMount.innerHTML = cartModalHTML(basePath);
+    if (footerMount) footerMount.innerHTML = footerHTML(basePath);
+
+    const copyrightYear = document.getElementById('copyright-year');
+    if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
+}
+
+renderPartials();

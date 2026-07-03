@@ -13,16 +13,8 @@
 }
 
 .go-back {
-  display: inline-block;
   margin-bottom: 40px;
-  color: var(--dark-gray);
-  text-decoration: none;
   font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.go-back:hover {
-  color: var(--main-accent);
 }
 
 .checkout-form {
@@ -204,10 +196,6 @@ input::placeholder {
   border-radius: 8px;
 }
 
-.summary-item.muted {
-  opacity: 0.7;
-}
-
 .summary-item img {
   width: 64px;
   height: 64px;
@@ -266,7 +254,7 @@ input::placeholder {
 }
 
 .continue-btn:hover {
-  background: #fbaF85;
+  background: var(--main-accent-hover);
 }
 
 @media (max-width: 1024px) {
@@ -469,7 +457,7 @@ input::placeholder {
 }
 
 .confirmation-btn:hover {
-  background: #fbaf85;
+  background: var(--main-accent-hover);
 }
 
 @media (max-width: 600px) {
