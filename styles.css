@@ -76,6 +76,9 @@ body {
     cursor: pointer;
     transition: stroke 0.1s ease-in-out;
     transition: fill 0.1s ease-in-out;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .header-cart-button svg {
@@ -145,6 +148,8 @@ main {
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .highlighted-item-btn:hover {
@@ -292,6 +297,8 @@ main {
     font-family: Manrope;
     font-weight: 700;
     line-height: 100%;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .featured-product-btn:hover {
@@ -347,6 +354,9 @@ main {
     font-family: Manrope;
     font-weight: 700;
     line-height: 100%;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--black);
 }
 
 .secondary-product-btn:hover {
@@ -406,6 +416,8 @@ main {
     transition: background-color 0.3s ease;
     font-family: Manrope;
     font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .tertiary-product-btn:hover {

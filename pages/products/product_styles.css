@@ -233,6 +233,8 @@ main {
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .related-product-btn:hover {
