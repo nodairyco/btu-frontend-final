@@ -27,7 +27,6 @@
 .checkout-header h1 {
   margin: 0 0 32px;
   font-size: 32px;
-  letter-spacing: 1px;
 }
 
 .checkout-section:not(:last-child) {
@@ -39,18 +38,13 @@
   gap: 24px;
   align-items: center;
   margin-bottom: 24px;
-}
-
-.section-title span {
-  display: inline-flex;
-  width: 32px;
-  height: 32px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--light-gray);
-  color: var(--black);
+  color: var(--main-accent);
+  font-family: Manrope;
   font-weight: 700;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
 }
 
 .section-title h2 {
@@ -81,7 +75,7 @@ label {
   display: block;
 }
 
-label > span {
+label>span {
   display: block;
   margin-bottom: 10px;
   font-size: 12px;
@@ -91,13 +85,7 @@ label > span {
   text-transform: uppercase;
 }
 
-label .label-row {
-  margin-bottom: 0;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
+input {
   width: 100%;
   padding: 16px 18px;
   border: 1px solid rgba(25, 25, 25, 0.15);
@@ -106,8 +94,16 @@ input[type="tel"] {
   color: var(--black);
 }
 
+input:focus {
+  outline: 1px solid var(--main-accent);
+}
+
 input::placeholder {
-  color: rgba(76, 76, 76, 0.5);
+  font-family: Manrope;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgb(128, 128, 128);
 }
 
 .full-width {
@@ -227,7 +223,7 @@ input::placeholder {
   gap: 16px;
 }
 
-.summary-totals > div {
+.summary-totals>div {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
@@ -492,7 +488,6 @@ input::placeholder {
 .label-row span:first-child {
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: -0.21px;
   color: var(--black);
   text-transform: uppercase;
 }

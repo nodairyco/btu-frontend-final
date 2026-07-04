@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 :root {
     --main-bg: rgb(15, 15, 15);
     --main-lr-padding: 12%;
@@ -634,6 +638,11 @@ main {
         flex-direction: column;
         gap: 24px;
         text-align: center;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 16px;
     }
 }
 
